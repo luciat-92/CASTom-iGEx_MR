@@ -20,18 +20,18 @@ options(bitmapType = 'cairo', device = 'png')
 
 parser <- ArgumentParser(description="correlation tscore and pathway phenotypes")
 parser$add_argument("--phenoFold", type = "character", help = "Folder with results phenotype annotation UKBB")
-parser$add_argument("--inputFold_rel", type = "character", nargs = '*',help = "Folder with results")
+parser$add_argument("--inputFold_rel", type = "character", nargs = '*',help = "Folder TWAS and PALAS summary stat. for UKBB")
 parser$add_argument("--pval_FDR_rel", type = "double", default = 0.05, help = "pval threshold to filter the genes and pathways (after BH correction) in related phenotypes")
 parser$add_argument("--pval_FDR_pheno", type = "double", default = 0.05,  help = "pval threshold to filter the genes and pathways (after BH correction) in phenotype")
-parser$add_argument("--tissue_name", type = "character", nargs = '*', help = "tissue considered")
+parser$add_argument("--tissue_name", type = "character", nargs = '*', help = "tissues considered")
 parser$add_argument("--pheno_name_comp", type = "character", help = "name phenotype of interest")
-parser$add_argument("--perc_par", type = "double", default = 0.1, help = "")
-parser$add_argument("--pathR_pheno_file", type = "character", help = "")
-parser$add_argument("--pathGO_pheno_file", type = "character", help = "")
-parser$add_argument("--tscore_pheno_file", type = "character", help = "")
-parser$add_argument("--refFold", type = "character", help = "")
+parser$add_argument("--perc_par", type = "double", default = 0.1, help = "threshold pathway jaccard sim")
+parser$add_argument("--pathR_pheno_file", type = "character", help = "PALAS (Reactome) summary statistics in .txt format")
+parser$add_argument("--pathGO_pheno_file", type = "character", help = "PALAS (GO) summary statistics in .txt format")
+parser$add_argument("--tscore_pheno_file", type = "character", help = "TWAS summary statistics in .txt format")
+parser$add_argument("--refFold", type = "character", help = "castom-igex fold with reference data")
 parser$add_argument("--feat_filt", type = "character", default = NULL, nargs = 3, help = "first gene, second Reactome, third GO")
-parser$add_argument("--thr_dist_par", type = "integer", default = 250000, help = "")
+parser$add_argument("--thr_dist_par", type = "integer", default = 250000, help = "threshold gene distance")
 parser$add_argument("--outFold", type="character", help = "Output file [basename only]")
 
 args <- parser$parse_args()
@@ -231,7 +231,7 @@ for(i in 1:length(tissue_name)){
   common_g <- intersect(tscore$ensembl_gene_id[tscore$tissue == tissue_name[i]], biomart_annTSS$ensembl_gene_id)
   geneAnn <- biomart_annTSS[match(common_g, biomart_annTSS$ensembl_gene_id),]
   
-  dist_mat <- mapply(function(x, y) abs(x - geneAnn$chromstart) < 250000 & y == geneAnn$chrom, x = geneAnn$chromstart, y = geneAnn$chrom)
+  dist_mat <- mapply(function(x, y) abs(x - geneAnn$chromstart) < thr_dist_par & y == geneAnn$chrom, x = geneAnn$chromstart, y = geneAnn$chrom)
   tmp <- tscore[tscore$tissue == tissue_name[i], ]
   
   # recursevly until no intersection
@@ -252,7 +252,7 @@ for(i in 1:length(tissue_name)){
     new_filt_gene <- tscore[tscore$new_id %in% keep_gene, ]
     common_g <- intersect(new_filt_gene$ensembl_gene_id[new_filt_gene$tissue == tissue_name[i]], biomart_annTSS$ensembl_gene_id)
     geneAnn <- biomart_annTSS[match(common_g, biomart_annTSS$ensembl_gene_id),]
-    dist_mat <- mapply(function(x, y) abs(x - geneAnn$chromstart) < 250000 & y == geneAnn$chrom, x = geneAnn$chromstart, y = geneAnn$chrom)
+    dist_mat <- mapply(function(x, y) abs(x - geneAnn$chromstart) < thr_dist_par & y == geneAnn$chrom, x = geneAnn$chromstart, y = geneAnn$chrom)
     tmp <- new_filt_gene
   }
   filt_genes[[i]] <- tscore[tscore$new_id %in% keep_gene, ]
