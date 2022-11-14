@@ -1,4 +1,6 @@
-# find genes and pathway that are significant both for CAD-UKBB and UKBB CAD related phenotypes
+#!/usr/bin/env Rscript
+
+# find genes and pathway that are significant both for a trait (CAD) and related phenotypes (UKBB CAD related)
 # combine all tissues
 # compute correlation 
 
