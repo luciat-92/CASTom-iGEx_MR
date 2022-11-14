@@ -1,0 +1,8 @@
+pheno_id	FieldID	Field	Path	Strata	Sexed	Coding	Coding_meaning	original_type	transformed_type	nsamples	nsamples_T	nsamples_F
+userId	NA	NA	NA	NA	NA	NA	NA	NA	NA	340939	NA	NA
+age	21003	Age	NA	NA	NA	NA	NA	NA	NA	340939	NA	NA
+sex	31	Sex	NA	NA	NA	NA	NA	NA	NA	340939	NA	NA
+LMR	LMR	Lymphocyte-to-Monocyte ratio	NA > NA > NA > Blood count ratio	Primary	Unisex	NA	NA	CONTINUOUS_MAIN	CONTINUOUS	330436	NA	NA
+PLR	PLR	Platelet-to-Lymphocyte ratio	NA > NA > NA > Blood count ratio	Primary	Unisex	NA	NA	CONTINUOUS_MAIN	CONTINUOUS	330537	NA	NA
+NLR	NLR	Neutrophill-to-Lymphocyte ratio	NA > NA > NA > Blood count ratio	Primary	Unisex	NA	NA	CONTINUOUS_MAIN	CONTINUOUS	330539	NA	NA
+ELR	ELR	Eosinophill-to-Lymphocyte ratio	NA > NA > NA > Blood count ratio	Primary	Unisex	NA	NA	CONTINUOUS_MAIN	CONTINUOUS	330539	NA	NA
