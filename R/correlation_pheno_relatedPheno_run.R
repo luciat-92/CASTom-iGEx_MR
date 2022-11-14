@@ -269,15 +269,13 @@ filt_genes <- do.call(rbind, filt_genes)
 #######################################################
 ### load related phenotype and intersect with pheno ###
 if(grepl('CAD',pheno_name_comp)){
-  pheno_name <- c(read.table(sprintf('%smatch_cov_pheno_CADrel_filter.txt', phenoFold), h=F, stringsAsFactors = F)$V1, 'ICD10_Anaemia', 'ICD10_Circulatory_system', 'ICD10_Endocrine', 'ICD10_Respiratory_system')
-  pheno_name <- pheno_name[!pheno_name %in% c('Medication', 'Medical_conditions')]
+  pheno_name <- read.table(sprintf('%sphenoCAD_class_test_MR', phenoFold), h=F, stringsAsFactors = F)$V1
   pheno_input <- read.delim(sprintf('%sphenotypeDescription_PHESANTproc_CADrelatedpheno_annotated.txt', phenoFold), h=T, stringsAsFactors = F, sep = '\t')
 }
 
 if(grepl('SCZ', pheno_name_comp)){
   
-  pheno_name <- c(read.table(sprintf('%smatch_cov_pheno.txt', phenoFold), h=F, stringsAsFactors = F)$V1, 'mixedpheno_Psychiatric', 'ICD10_Psychiatric', 'ICD9_Psychiatric', 
-                  read.table(sprintf('%smatch_cov_pheno_SchunkertApp.txt', phenoFold), h=F, stringsAsFactors = F)$V1, 'Blood_biochemistry', 'Blood_count_ratio')
+  pheno_name <- read.table(sprintf('%sphenoSCZ_class_test_MR', phenoFold), h=F, stringsAsFactors = F)$V1
   
   pheno_input <- read.delim(sprintf('%sphenotypeDescription_PHESANTproc.txt', phenoFold), h=T, stringsAsFactors = F, sep = '\t')
   tmp <- read.delim(sprintf('%sphenotypeDescription_PHESANTproc_CADrelatedpheno.txt', phenoFold), h=T, stringsAsFactors = F, sep = '\t')
@@ -286,8 +284,6 @@ if(grepl('SCZ', pheno_name_comp)){
   tmp <- read.delim(sprintf('%sphenotypeDescription_ratioBC_PHESANTproc.txt', phenoFold), h=T, stringsAsFactors = F, sep = '\t')
   pheno_input <- rbind(pheno_input, tmp)
   pheno_input <- pheno_input[!duplicated(pheno_input$pheno_id),]
-  pheno_name <- pheno_name[!pheno_name %in% c('Numeric_memory','Diffusion_brain_MRI', 'Medical_conditions', 'ICD10_Psychiatric', 'ICD9_Psychiatric', 'Resting_functional_brain_MRI',
-                                              'dMRI_skeleton', 'T2-weighted_brain_MRI', 'Estimated_nutrients_yesterday')]
   print(pheno_name)
 }
 
