@@ -26,10 +26,3 @@ sbatch --job-name=pl_tscore plot_MR_corr_tscore_allTissues.sh
 sbatch --job-name=pl_path plot_MR_corr_path_allTissues.sh
 sbatch --job-name=pl_tscore plot_MR_corr_tscore_CADUKBB_allTissues.sh
 sbatch --job-name=pl_path plot_MR_corr_path_CADUKBB_allTissues.sh
-
-# specific MR plot
-sbatch --job-name=pl plot_MRreg_tscore_spec.sh
-sbatch --job-name=pl plot_MRreg_path_spec.sh # use this on paper figure
-sbatch --job-name=pl plot_MRreg_tscore_BFP.sh
-sbatch --job-name=pl plot_MRreg_path_BFP.sh
-
