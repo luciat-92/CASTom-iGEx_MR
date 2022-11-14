@@ -1,5 +1,7 @@
 # Correlation and causality assessment of a trait-endophenotype pair
-From [CASTom-iGEx Module 2](https://gitlab.mpcdf.mpg.de/luciat/castom-igex/-/tree/master/Software/model_prediction) output, the following R based pipeline performs 1) correlation of Z-statistic association for genes and pathways between a trait and considered endophenotypes, 2) mendelian randomization analysis to assess causality endophenotype --> trait or trait --> endophenotype using as genetic instruments imputed genes and pathways.
+From [CASTom-iGEx Module 2](https://gitlab.mpcdf.mpg.de/luciat/castom-igex/-/tree/master/Software/model_prediction) output, the following R based pipeline performs 
+    1) correlation of Z-statistic association for genes and pathways between a trait and considered endophenotypes, 
+    2) mendelian randomization analysis to assess causality endophenotype -> trait or trait -> endophenotype using as genetic instruments imputed genes and pathways.
 
 ## Input Files
 - 
