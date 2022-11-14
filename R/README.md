@@ -9,8 +9,7 @@ From [CASTom-iGEx Module 2](https://gitlab.mpcdf.mpg.de/luciat/castom-igex/-/tre
 - **Summary TWAS** (*--tscore_pheno_file*): summary statistic from TWAS in a txt file format, all tissues combined
 - **Summary PALAS (Reactome)** (*--pathR_pheno_file*): summary statistic from PALAS for Reactome in a txt file format, all tissues combined
 - **Summary PALAS (GO)** (*--pathGO_pheno_file*): summary statistic from PALAS for GO in a txt file format, all tissues combined
-- **Path to UKBB .RData associations** (*--inputFold_rel*): complete path to TWAS and PALAS output in .RData format for UKBB pehnotypes. .RData files are obtained from *pheno_association_<>.R* scripts of CASTom-iGEx (Module 2)
-- 
+- **Path to UKBB .RData associations** (*--inputFold_rel*): complete path to TWAS and PALAS output in .RData format for UKBB pehnotypes. .RData files are obtained from *pheno_association_<>.R* scripts of CASTom-iGEx (Module 2) 
 
 ## Workflow
 ### Initial filtering if datasets are not harmonized 
@@ -24,13 +23,13 @@ From [CASTom-iGEx Module 2](https://gitlab.mpcdf.mpg.de/luciat/castom-igex/-/tre
 
 ### Mendelian randomization based on genes and pathways association 
 
-correlation_features_run.R
+- correlation_features_run.R
 
 #### (direct)
-mendelianRand_pheno_relatedPheno_run.R
+- mendelianRand_pheno_relatedPheno_run.R
 
 #### (reverse)
 
-mendelianRand_reverse_pheno_relatedPheno_run.R
+- mendelianRand_reverse_pheno_relatedPheno_run.R
 
 
