@@ -80,15 +80,20 @@ list including correlation and pvalue between the trait (pheno_name_comp) and th
 ```sh
 ./correlation_features_run.R
 ```
-#### direct MR
+#### Direct MR
 
 ```sh
 ./mendelianRand_pheno_relatedPheno_run.R
 ```
 
-#### reverse MR
+#### Reverse MR
 
 ```sh
 ./mendelianRand_reverse_pheno_relatedPheno_run.R
 ```
 
+#### Combine results across tissues
+
+```sh
+combine_MR_allTissues_run.R
+```
