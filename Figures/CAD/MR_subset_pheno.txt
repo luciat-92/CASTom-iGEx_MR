@@ -1,0 +1,14 @@
+Blood_biochemistry
+Blood_count
+Blood_pressure
+Body_size_measures
+Bone-densitometry_of_heel
+Family_history
+Hand_grip_strength
+ICD10_Circulatory_system
+ICD10_Endocrine
+Impedance_measures
+Mental_health
+Physical_activity
+Smoking
+Diet

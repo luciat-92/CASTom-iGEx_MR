@@ -1,3 +1,5 @@
+#!/usr/bin/env Rscript
+
 # Mendelian randomization (version 2, cosider all phenotypes regardelss correlation)
 
 options(stringsAsFactors=F)
