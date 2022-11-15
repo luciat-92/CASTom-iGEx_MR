@@ -67,16 +67,28 @@ The output includes (saved in *--outFold*):
 - correlation_enrich_<pheno_name_comp>_relatedPheno.RData
 list including correlation and pvalue between the trait (pheno_name_comp) and the UKBB endophenotypes for genes and pathways separately
 
+#### Combine results across tissues and filter significant correlations
 
-### Mendelian randomization based on genes and pathways association 
+```sh
+./combine_correlation_allTissues_run.R \
+```
 
-- correlation_features_run.R
+### Mendelian randomization (MR) based on genes and pathways association 
 
-#### (direct)
-- mendelianRand_pheno_relatedPheno_run.R
+#### Compute features correlation
 
-#### (reverse)
+```sh
+./correlation_features_run.R
+```
+#### direct MR
 
-- mendelianRand_reverse_pheno_relatedPheno_run.R
+```sh
+./mendelianRand_pheno_relatedPheno_run.R
+```
 
+#### reverse MR
+
+```sh
+./mendelianRand_reverse_pheno_relatedPheno_run.R
+```
 
