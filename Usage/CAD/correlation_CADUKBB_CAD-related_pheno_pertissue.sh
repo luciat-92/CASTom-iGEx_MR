@@ -26,7 +26,7 @@ Rscript ${git_fold}correlation_pheno_relatedPheno_run.R \
 	--tscore_pheno_file OUTPUT_GTEx/predict_CAD/AllTissues/200kb/CAD_GWAS_bin5e-2/UKBB/tscore_pval_CAD_HARD_covCorr.txt \
 	--pathR_pheno_file OUTPUT_GTEx/predict_CAD/AllTissues/200kb/CAD_GWAS_bin5e-2/UKBB/path_Reactome_pval_CAD_HARD_covCorr_filt.txt \
 	--pathGO_pheno_file OUTPUT_GTEx/predict_CAD/AllTissues/200kb/CAD_GWAS_bin5e-2/UKBB/path_GO_pval_CAD_HARD_covCorr_filt.txt \
-	--outFold ${fold}/enrichment_CADHARD_res/perc0.3_dist250000b_ \
+	--outFold ${fold}/enrichment_CADHARD_res/perc0.3_dist200000b_ \
 	--pval_FDR_pheno 0.05 \
 	--pval_FDR_rel 0.05 \
 	--perc_par 0.3 \
