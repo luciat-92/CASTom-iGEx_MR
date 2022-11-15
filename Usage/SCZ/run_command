@@ -1,17 +1,22 @@
+# compute correlation predicted models (genes/pathways)
+sbatch --job-name=pred --array=1-10 compare_prediction_UKBB_SCZ-PGC.sh
+
 # correlation SCZ related phenotypes
 sbatch --job-name=corr --array=1-10 correlation_SCZ_UKBB-related_pheno_pertissue.sh
 sbatch --job-name=combine combine_correlation_SCZ_SCZ-related_pheno.sh
 
-# correlation UKBB genes and pathway using fix sample pools
+# correlation across genes and pathway in UKBB using fix sample pools
 sbatch --job-name=corr_s --array=1-10 correlation_tscore_fixedSamples.sh
 sbatch --job-name=corr_s --array=1-10 correlation_path_fixedSamples.sh
 
 # mendelian randomization
 sbatch --job-name=mend_t --array=1-10 mendelianRandom_tscore_SCZ_UKBB-related_pertissue.sh
 sbatch --job-name=mend_p --array=1-10 mendelianRandom_path_SCZ_UKBB-related_pertissue.sh
+
 # reverse MR (SCZ as exposure)
 sbatch --job-name=mend_rv_t --array=1-10 mendelianRandom_reverse_tscore_SCZ_UKBB-related_pertissue.sh
 sbatch --job-name=mend_rv_p --array=1-10 mendelianRandom_reverse_path_SCZ_UKBB-related_pertissue.sh
+
 # combine results
 sbatch --job-name=combine combine_MR_tscore_SCZ_SCZ-related_pheno.sh
 sbatch --job-name=combine combine_MR_path_SCZ_SCZ-related_pheno.sh
