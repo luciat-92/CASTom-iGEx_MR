@@ -13,7 +13,7 @@ Endophenotypes are obtained from UK Biobank large phenotype collection but scrip
 Scripts details, input and output specifics are in [R](https://gitlab.mpcdf.mpg.de/luciat/castom-igex_mr/-/blob/main/R) folder. Usage in the context of Coronary Artery Disease (UK Biobank / CARDIoGRAM) and Schizophrenia (PGC2) are in [Application](https://gitlab.mpcdf.mpg.de/luciat/castom-igex_mr/-/tree/main/Usage) folder.
 
 ## Built with 
-* R (3.5.3)
+* R (>=3.5.3)
 ### Required R packages
 - argparse
 - data.table
