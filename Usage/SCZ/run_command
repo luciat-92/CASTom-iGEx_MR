@@ -15,7 +15,7 @@ sbatch --job-name=mend_rv_p --array=1-10 mendelianRandom_reverse_path_SCZ_UKBB-r
 # combine results
 sbatch --job-name=combine combine_MR_tscore_SCZ_SCZ-related_pheno.sh
 sbatch --job-name=combine combine_MR_path_SCZ_SCZ-related_pheno.sh
-# sbatch --job-name=plot_SCZ plot_MR_OR_corr.sh
+
 sbatch --job-name=pl_tscore plot_MR_corr_tscore_allTissues.sh
 sbatch --job-name=pl_path plot_MR_corr_path_allTissues.sh
 
