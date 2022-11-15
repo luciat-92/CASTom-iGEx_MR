@@ -14,8 +14,31 @@ From [CASTom-iGEx Module 2](https://gitlab.mpcdf.mpg.de/luciat/castom-igex/-/tre
 ## Workflow
 ### Initial filtering if datasets are not harmonized 
 
-- compare_geneExp_matchedDataset_run.R
-- compare_pathScore_matchedDataset_run.R
+Compute genes correlation imputed from 2 different models. Genes are imputed on the reference panel from which the gene expression models are estimated, see [CASTom-iGEx Module 1](https://gitlab.mpcdf.mpg.de/luciat/castom-igex/-/tree/master/Software/model_training)
+
+```sh
+Rscript ./compare_geneExp_matchedDataset_run.R \
+    --geneExpPred_file (2 files necessary) \
+    --corr_thr (default 0.8) \
+    --tissue_name \
+    --outFold 
+```
+The output includes (saved in *--outFold*):
+- <tissue_name>_filter_genes_matched_datasets.txt 
+
+
+Compute pathways correlation imputed from 2 different models. Pathways-scores are computed on the reference panel from which the gene expression models are estimated (see [CASTom-iGEx Module 1](https://gitlab.mpcdf.mpg.de/luciat/castom-igex/-/tree/master/Software/model_training)), after the computation of gene T-scores (see [CASTom-iGEx Module 2](https://gitlab.mpcdf.mpg.de/luciat/castom-igex/-/tree/master/Software/model_prediction))
+
+```sh
+Rscript ./compare_pathScore_matchedDataset_run.R \
+    --pathScore_file (2 files necessary) \
+    --corr_thr (default 0.8) \
+    --type_path \
+    --tissue_name \
+    --outFold 
+```
+The output includes (saved in *--outFold*):
+- <tissue_name>_filter_path_<type_path>_matched_datasets.txt
 
 ### Correlation based on gene and pathway association of a trait of interest with multiple endophenotypes 
 
