@@ -42,7 +42,31 @@ The output includes (saved in *--outFold*):
 
 ### Correlation based on gene and pathway association of a trait of interest with multiple endophenotypes 
 
-- correlation_pheno_relatedPheno_run.R
+- *--phenoFold*: includes phenotype info, input files also available in Usage/Data/
+- *--refFold*: path to folder including gene TSS annotation (use [CASTom-iGEx refData](https://gitlab.mpcdf.mpg.de/luciat/castom-igex/-/tree/master/refData))
+- *--feat_filt*: if not NULL, path to genes, Reactome and GO files for feature filtering based on correlation among models 
+
+```sh
+./correlation_pheno_relatedPheno_run.R \
+	--phenoFold  \
+	--tissue_name \
+	--pheno_name_comp (e.g. SCZ) \
+	--inputFold_rel \
+	--tscore_pheno_file \
+	--pathR_pheno_file \
+	--pathGO_pheno_file \
+	--outFold \
+	--pval_FDR_pheno (default 0.05) \
+	--pval_FDR_rel (default 0.05) \
+	--perc_par (default 0.1) \
+	--thr_dist_par (default 250000) \
+	--refFold \
+	--feat_filt (default NULL)
+```
+The output includes (saved in *--outFold*):
+- correlation_enrich_<pheno_name_comp>_relatedPheno.RData
+list including correlation and pvalue between the trait (pheno_name_comp) and the UKBB endophenotypes for genes and pathways separately
+
 
 ### Mendelian randomization based on genes and pathways association 
 
