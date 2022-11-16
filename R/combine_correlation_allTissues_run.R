@@ -1,3 +1,5 @@
+#!/usr/bin/env Rscript
+
 # combine results overall tissue
 # correlation, MR IVW and MREgg
 
