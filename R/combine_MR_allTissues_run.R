@@ -12,7 +12,7 @@ parser <- ArgumentParser(description="combine results MR abd correlations across
 parser$add_argument("--MR_pheno_file", type = "character", default = NULL, help = "")
 parser$add_argument("--mrRes_tissue_file", type = "character", nargs = '*', help = "results for MR analysis tissue spec")
 parser$add_argument("--comb_corr_file", type = "character", help = "results for corr analysis all tissues")
-parser$add_argument("--thr_pval", type = "double", default = 0.05, help = "nominal p-value threhsold for correlation")
+parser$add_argument("--thr_pval", type = "double", default = 0.05, help = "nominal p-value MR to show result")
 parser$add_argument("--tissue_name", type = "character", nargs = '*', help = "tissues")
 parser$add_argument("--mr_type", type = "character", help = "MR method used (Egger or IVW)")
 parser$add_argument("--type_data", type = "character", help = "tscore or tot_path")
@@ -99,7 +99,7 @@ colnames(feat_mr_signedPval)[-c(1:3)] <- tissue_name
 # matrix with only significant res
 feat_mr_signedPval_sign <- feat_mr_signedPval
 for(i in 1:length(tissue_name)){
-  feat_mr_signedPval_sign[feat_mr_pval[,i+3]> 0.05 & !is.na(feat_mr_pval[,i+3]), i+3] <- NA
+  feat_mr_signedPval_sign[feat_mr_pval[,i+3]> thr_pval & !is.na(feat_mr_pval[,i+3]), i+3] <- NA
 }
 
 
