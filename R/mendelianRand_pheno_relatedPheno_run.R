@@ -19,7 +19,6 @@ suppressPackageStartupMessages(library(MendelianRandomization))
 options(bitmapType = 'cairo', device = 'png')
 
 parser <- ArgumentParser(description="Mendelian Randomization for enriched related phenotypes")
-parser$add_argument("--phenoFold", type = "character", help = "Folder with results phenotype annotation UKBB")
 parser$add_argument("--inputFold_rel", type = "character", nargs = '*',help = "Folder with results")
 parser$add_argument("--pval_FDR_rel", type = "double", default = 0.05, help = "pval threshold to filter the genes and pathways (after BH correction) in related phenotypes")
 parser$add_argument("--pval_corr", type = "double", default = 0.05, help = "pval threshold to filter phenotypes based on fisher test enrichment")
@@ -33,7 +32,6 @@ parser$add_argument("--cor_file", type = "character", help = "")
 parser$add_argument("--outFold", type="character", help = "Output file [basename only]")
 
 args <- parser$parse_args()
-phenoFold <- args$phenoFold
 MR_pheno_file <- args$MR_pheno_file
 tissue_name <- args$tissue_name
 inputFold_rel <- args$inputFold_rel

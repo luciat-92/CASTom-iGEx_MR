@@ -28,7 +28,6 @@ fold_out=Meta_Analysis_SCZ/OUTPUT_all/
 
 Rscript ${git_fold}mendelianRand_pheno_relatedPheno_run.R \
 	--MR_pheno_file subset_pheno_MR.txt \
-	--phenoFold /psycl/g/mpsziller/lucia/UKBB/eQTL_PROJECT/INPUT_DATA/Covariates/ \
 	--tissue_name ${t} \
 	--pheno_name_comp SCZ \
 	--inputFold_rel ${fold_UKBB} \
