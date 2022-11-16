@@ -10,7 +10,7 @@ module load R/3.5.3
 
 cd /psycl/g/mpsziller/lucia/SCZ_PGC/eQTL_PROJECT/
 
-git_fold=/psycl/g/mpsziller/lucia/priler_project/Software/model_prediction/
+git_fold=/psycl/g/mpsziller/lucia/castom-igex_mr/R/
 
 id_t=${SLURM_ARRAY_TASK_ID}
 readarray -t tissues < Meta_Analysis_SCZ/Tissues_PGC_red2
@@ -26,7 +26,7 @@ fi
 fold=Meta_Analysis_SCZ/${t}/enrichment_SCZ-UKBB_res/
 fold_out=Meta_Analysis_SCZ/OUTPUT_all/
 
-Rscript ${git_fold}mendelianRand_pheno_relatedPheno_run.R \
+./${git_fold}mendelianRand_pheno_relatedPheno_run.R \
         --MR_pheno_file subset_pheno_MR.txt \
 	--tissue_name ${t} \
 	--pheno_name_comp SCZ \

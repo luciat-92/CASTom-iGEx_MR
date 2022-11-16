@@ -9,7 +9,9 @@
 module load R/3.5.3
 
 cd /psycl/g/mpsziller/lucia/SCZ_PGC/eQTL_PROJECT/
-git_fold=/psycl/g/mpsziller/lucia/priler_project/Figures/model_prediction/
+
+git_fold=/psycl/g/mpsziller/lucia/castom-igex_mr/R/
+
 readarray -t tissues < /psycl/g/mpsziller/lucia/SCZ_PGC/eQTL_PROJECT/Meta_Analysis_SCZ/Tissues_PGC_red2
 
 fold=Meta_Analysis_SCZ/OUTPUT_all/enrichment_SCZ-UKBB_res/

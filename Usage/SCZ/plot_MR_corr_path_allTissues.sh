@@ -37,7 +37,7 @@ Rscript ${git_fold}plot_correlation_MR_pheno_related_run.R \
 	--mrRes_Egg_int_file ${fold}matchUKBB_perc0.3_tot_path_Mendelian_randomization_Egger_inter_estimates_allTissues.txt \
 	--mrRes_Egg_int_rev_file ${fold}matchUKBB_perc0.3_tot_path_Mendelian_randomization_reverse_Egger_inter_estimates_allTissues.txt \
 	--color_pheno_file /psycl/g/mpsziller/lucia/UKBB/eQTL_PROJECT/INPUT_DATA/Covariates/color_pheno_type_UKBB.txt \
-	--color_tissues_file /psycl/g/mpsziller/lucia/priler_project/Figures/color_tissues.txt \
+	--color_tissues_file ${git_fold}color_tissues.txt \
 	--pheno_name SCZ \
 	--outFold ${fold}matchUKBB_perc0.3_ \
 	--pheno_list_MR_file ${git_fold}../Usage/Data/plot_pheno_MRext_SCZ.txt \

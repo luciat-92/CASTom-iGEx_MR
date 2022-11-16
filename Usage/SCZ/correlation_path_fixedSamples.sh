@@ -20,9 +20,9 @@ fold=/psycl/g/mpsziller/lucia/UKBB/eQTL_PROJECT/OUTPUT_GTEx/predict_UKBB/${t}/20
 fi
 
 cov_fold=INPUT_DATA_GTEx/CAD/Covariates/UKBB/
-git_fold=/psycl/g/mpsziller/lucia/priler_project/Software/model_prediction/
+git_fold=/psycl/g/mpsziller/lucia/castom-igex_mr/R/
 
-Rscript ${git_fold}correlation_features_run.R \
+./${git_fold}correlation_features_run.R \
 	--inputFile ${fold}Pathway_Reactome_scores.RData ${fold}Pathway_GO_scores.RData \
 	--sampleAnnFile /psycl/g/mpsziller/lucia/CAD_UKBB/eQTL_PROJECT/INPUT_DATA_GTEx/CAD/Covariates/UKBB/covariateMatrix_forCorrelation.txt \
 	--type_data Reactome GO \
