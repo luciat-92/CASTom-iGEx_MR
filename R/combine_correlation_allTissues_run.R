@@ -61,7 +61,7 @@ colnames(feat_corr) <- colnames(feat_corr_pval) <- tissue_name
 # matrix with only significant corr
 feat_corr_sign <- feat_corr
 for(i in 1:length(tissue_name)){
-  feat_corr_sign[feat_corr_pval[,i]> 0.05, i] <- NA
+  feat_corr_sign[feat_corr_pval[,i]> thr_pval, i] <- NA
 }
 
 feat_corr <- cbind(feat_corr, pheno_info)
