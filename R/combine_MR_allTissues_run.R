@@ -1,3 +1,5 @@
+#!/usr/bin/env Rscript
+
 # combine results overall tissue
 # correlation, MR IVW and MREgg
 
@@ -10,12 +12,12 @@ parser <- ArgumentParser(description="combine results MR abd correlations across
 parser$add_argument("--MR_pheno_file", type = "character", default = NULL, help = "")
 parser$add_argument("--mrRes_tissue_file", type = "character", nargs = '*', help = "results for MR analysis tissue spec")
 parser$add_argument("--comb_corr_file", type = "character", help = "results for corr analysis all tissues")
-parser$add_argument("--thr_pval", type = "double", default = 0.05, help = "")
-parser$add_argument("--tissue_name", type = "character",nargs = '*', help = "tissues")
-parser$add_argument("--mr_type", type = "character", help = "")
-parser$add_argument("--type_data", type = "character", help = "")
-parser$add_argument("--type_analysis", type = "character", help = "")
-parser$add_argument("--outFold", type="character", help = "Output file [basename only]")
+parser$add_argument("--thr_pval", type = "double", default = 0.05, help = "nominal p-value threhsold for correlation")
+parser$add_argument("--tissue_name", type = "character", nargs = '*', help = "tissues")
+parser$add_argument("--mr_type", type = "character", help = "MR method used (Egger or IVW)")
+parser$add_argument("--type_data", type = "character", help = "tscore or tot_path")
+parser$add_argument("--type_analysis", type = "character", help = "reverse or not_reverse")
+parser$add_argument("--outFold", type="character", help = "Output file")
 
 args <- parser$parse_args()
 mrRes_tissue_file <- args$mrRes_tissue_file
