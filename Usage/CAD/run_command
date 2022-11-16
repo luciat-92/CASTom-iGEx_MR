@@ -16,11 +16,6 @@ sbatch --job-name=perc0.3 --array=1-5,7-11,15 mendelianRandom_path_CAD_CAD-relat
 sbatch --job-name=mr_tscore --array=1-5,7-11,15 mendelianRandom_tscore_CADUKBB_CAD-related_pertissue.sh
 sbatch --job-name=perc0.3 --array=1-5,7-11,15 mendelianRandom_path_CADUKBB_CAD-related_pertissue.sh 0.3
 
-sbatch --job-name=mr_tscore --array=1-5,7-11,15 mendelianRandom_reverse_tscore_CAD_CAD-related_pertissue.sh
-sbatch --job-name=perc0.3 --array=1-5,7-11,15 mendelianRandom_reverse_path_CAD_CAD-related_pertissue.sh 0.3
-sbatch --job-name=mr_tscore --array=1-5,7-11,15 mendelianRandom_reverse_tscore_CADUKBB_CAD-related_pertissue.sh
-sbatch --job-name=perc0.3 --array=1-5,7-11,15 mendelianRandom_reverse_path_CADUKBB_CAD-related_pertissue.sh 0.3
-
 # combine results
 sbatch --job-name=combine combine_MR_tscore_CAD_CAD-related_pheno.sh
 sbatch --job-name=combine combine_MR_path_CAD_CAD-related_pheno.sh

@@ -15,7 +15,13 @@ t=$(eval echo "\${tissues[${id_t}-1]}")
 
 fold=OUTPUT_GTEx/predict_CAD/${t}/200kb/CAD_GWAS_bin5e-2/UKBB/devgeno0.01_testdevgeno0/
 cov_fold=INPUT_DATA_GTEx/CAD/Covariates/UKBB/
-git_fold=/psycl/g/mpsziller/lucia/priler_project/Software/model_prediction/
+git_fold=/psycl/g/mpsziller/lucia/castom-igex_mr/R/
 
-Rscript ${git_fold}correlation_features_run.R --inputFile ${fold}Pathway_Reactome_scores.RData ${fold}Pathway_GO_scores.RData --sampleAnnFile ${cov_fold}covariateMatrix_forCorrelation.txt --type_data Reactome GO --outFold ${fold} --tissues_name ${t}
+./${git_fold}correlation_features_run.R \
+	--inputFile ${fold}Pathway_Reactome_scores.RData \
+	${fold}Pathway_GO_scores.RData \
+	--sampleAnnFile ${cov_fold}covariateMatrix_forCorrelation.txt \
+	--type_data Reactome GO \
+	--outFold ${fold} \
+	--tissues_name ${t}
 

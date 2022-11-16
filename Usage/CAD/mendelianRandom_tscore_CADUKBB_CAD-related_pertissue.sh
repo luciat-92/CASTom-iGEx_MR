@@ -10,7 +10,7 @@ module load R/3.5.3
 
 cd /psycl/g/mpsziller/lucia/CAD_UKBB/eQTL_PROJECT/
 
-git_fold=/psycl/g/mpsziller/lucia/priler_project/Software/model_prediction/
+git_fold=/psycl/g/mpsziller/lucia/castom-igex_mr/R/
 
 id_t=${SLURM_ARRAY_TASK_ID}
 readarray -t tissues < OUTPUT_GTEx/Tissue_CADgwas
@@ -18,7 +18,7 @@ t=$(eval echo "\${tissues[${id_t}-1]}")
 
 fold=OUTPUT_GTEx/predict_CAD/${t}/200kb/CAD_GWAS_bin5e-2/UKBB/devgeno0.01_testdevgeno0/
 
-Rscript ${git_fold}mendelianRand_pheno_relatedPheno_run.R \
+./${git_fold}mendelianRand_pheno_relatedPheno_run.R \
 	--MR_pheno_file INPUT_DATA_GTEx/CAD/Covariates/UKBB/MR_subset_pheno.txt \
 	--phenoFold INPUT_DATA_GTEx/CAD/Covariates/UKBB/ \
 	--tissue_name ${t} \

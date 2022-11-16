@@ -10,7 +10,7 @@ module load R/3.5.3
 
 cd /psycl/g/mpsziller/lucia/CAD_UKBB/eQTL_PROJECT/
 
-git_fold=/psycl/g/mpsziller/lucia/priler_project/Software/model_prediction/
+git_fold=/psycl/g/mpsziller/lucia/castom-igex_mr/R/
 
 id_t=${SLURM_ARRAY_TASK_ID}
 readarray -t tissues < OUTPUT_GTEx/Tissue_CADgwas
@@ -30,6 +30,6 @@ Rscript ${git_fold}correlation_pheno_relatedPheno_run.R \
 	--pval_FDR_pheno 0.05 \
 	--pval_FDR_rel 0.05 \
 	--perc_par 0.3 \
-	--thr_dist_par 200000 \
-	--refFold /psycl/g/mpsziller/lucia/priler_project/refData/ \
+	--thr_dist_par 250000 \
+	--refFold /psycl/g/mpsziller/lucia/castom-igex/refData/ \
 

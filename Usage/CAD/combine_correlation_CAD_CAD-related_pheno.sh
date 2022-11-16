@@ -9,7 +9,9 @@
 module load R/3.5.3
 
 cd /psycl/g/mpsziller/lucia/CAD_UKBB/eQTL_PROJECT/
-git_fold=/psycl/g/mpsziller/lucia/priler_project/Figures/model_prediction/
+
+git_fold=/psycl/g/mpsziller/lucia/castom-igex_mr/R/
+
 tissues=(Adipose_Subcutaneous Adipose_Visceral_Omentum Adrenal_Gland Artery_Aorta Artery_Coronary Colon_Sigmoid Colon_Transverse Heart_Atrial_Appendage Heart_Left_Ventricle Liver Whole_Blood)
 fold=OUTPUT_GTEx/predict_CAD/AllTissues/200kb/CAD_GWAS_bin5e-2/UKBB/enrichment_CADHARD_res/
 
